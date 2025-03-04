@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ContactsModule } from './contacts/contacts.module';
+import { Contact } from './contacts/entities/contact.entity';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { ContactsModule } from './contacts/contacts.module';
       host: "localhost",
       port: 5432,
       username: "postgres",
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [Contact],
       synchronize: true
     }),
     ContactsModule
