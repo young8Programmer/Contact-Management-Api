@@ -8,7 +8,11 @@ import { ContactsModule } from './contacts/contacts.module';
   imports: [
     TypeOrmModule.forRoot({
       type: "postgres",
-      url: process.env.DATABASE_URL,
+      database: "contacts",
+      password: "1234",
+      host: "localhost",
+      port: 5432,
+      username: "postgres",
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true
     }),
