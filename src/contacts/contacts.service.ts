@@ -18,7 +18,7 @@ export class ContactsService{
     return this.contactRepository.save(contact)
   }
 
-  async findAll(id: number): Promise<Contact[]>{
+  async findAll(): Promise<Contact[]>{
     return this.contactRepository.find({
       order: {name: "ASC"},
     });
